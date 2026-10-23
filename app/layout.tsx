@@ -1,8 +1,9 @@
 import ThemeRegistry from '../src/components/ThemeRegistry/ThemeRegistry';
+import NavigationBar from '../src/components/Navbar/navbar';
 
 export const metadata = {
-  title: 'Mi App con Next.js y Material UI',
-  description: 'Frontend independiente con Next.js App Router y MUI',
+  title: 'Artemisa',
+  description: 'Landing page de Artemisa',
 };
 
 export default function RootLayout({
@@ -14,6 +15,7 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <ThemeRegistry>
+          <NavigationBar />  
           {children}
         </ThemeRegistry>
       </body>

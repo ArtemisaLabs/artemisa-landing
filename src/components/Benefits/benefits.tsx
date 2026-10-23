@@ -1,6 +1,7 @@
 import { Box, Typography, Stack, Button } from '@mui/material';
 import MexicoFlag from './MexicoFlag';
 import DashboardPreview from './DashboardPreview';
+import SocialProofGroup from './Avatar';
 
 function Benefits() {
     return (
@@ -37,6 +38,8 @@ function Benefits() {
                         Ver Video interactivo (2 min)
                     </Button>
                 </Stack>
+                <br/>
+                <SocialProofGroup />
             </Stack>
 
             {/* Columna Derecha: Contenedor Relativo que envuelve AMBAS capas */}

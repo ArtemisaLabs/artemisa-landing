@@ -11,7 +11,7 @@ function HeartDoodle() {
 
 export default function BannerCTA() {
   return (
-    <Box sx={{ width: '100%', maxWidth: '1200px', mx: 'auto', boxSizing: 'border-box', px: { xs: 2, md: 4 }, py: 2 }}>
+    <Box sx={{ width: '95%',  mx: 'auto', boxSizing: 'border-box', px: { xs: 2, md: 4 }, py: 2 }}>
       <Box
         sx={{
           position: 'relative',

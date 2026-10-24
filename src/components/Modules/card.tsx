@@ -6,7 +6,7 @@ import {
 export default function Card({ title, description, icon }: any) {
     return (
         <Box 
-            sx={{ 
+            sx={{
                 width: '100%', // Se adapta al contenedor del grid flexible
                 display: 'flex', 
                 flexDirection: 'column', 
@@ -17,7 +17,11 @@ export default function Card({ title, description, icon }: any) {
                 border: '1px solid #E5E0D0', 
                 borderRadius: '24px',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.02)',
-                height: '100%'
+                height: '100%',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                '&:hover': {
+                    transform: 'translateY(-4px)'
+                },
             }}
         >
             <Box sx={{ mb: 2 }}>{icon}</Box>

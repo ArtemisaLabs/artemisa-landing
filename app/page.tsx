@@ -4,6 +4,7 @@ import { Container, Typography, Button, Box, Paper, Stack } from '@mui/material'
 import Benefits from '../src/components/Benefits/benefits';
 import Scope from '../src/components/Scope/Scope';
 import Modules from '../src/components/Modules/modules';
+import Users from '../src/components/Users/users';
 
 export default function HomePage() {
   return (
@@ -16,7 +17,9 @@ export default function HomePage() {
       >
         <Scope />
         <Modules />
+        <Users />
       </Stack>
+
     </Box>
   );
 }

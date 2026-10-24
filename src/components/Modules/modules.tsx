@@ -60,10 +60,10 @@ export default function Modules() {
             }}
         >
             {/* Encabezados de la sección */}
-            <Typography variant="body2" sx={{ color: 'text.secondary', fontWeight: 600, letterSpacing: '0.05em' }}>
+            <Typography sx={{ color: 'text.secondary', fontSize: '0.75rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                 TODO LO QUE NECESITAS EN UN SOLO LUGAR
             </Typography>
-            <Typography variant="h5" sx={{ mt: 1, mb: 4, fontWeight: 800 }}>
+            <Typography variant="h4" sx={{ mt: 1, color: '#1D3354', fontWeight: 700, fontSize: { xs: '1.5rem', md: '2.125rem' } }}>
                 M&oacute;dulos clave de Artemis
             </Typography>
 

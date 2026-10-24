@@ -3,6 +3,7 @@
 import { Container, Typography, Button, Box, Paper, Stack } from '@mui/material';
 import Benefits from '../src/components/Benefits/benefits';
 import Scope from '../src/components/Scope/Scope';
+import Modules from '../src/components/Modules/modules';
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
         sx={{ backgroundColor: '#f4f3eb', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         <Scope />
+        <Modules />
       </Stack>
     </Box>
   );

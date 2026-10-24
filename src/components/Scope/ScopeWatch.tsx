@@ -5,6 +5,7 @@ export default function ClockIcon({ size = 24, color = '#4C7C69' }: { size?: num
     <svg
       width={size}
       height={size}
+      style={{ flexShrink: 0, maxWidth: '100%' }}
       viewBox="0 0 24 24"
       fill="none"
       stroke={color}

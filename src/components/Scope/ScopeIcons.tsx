@@ -6,6 +6,7 @@ export function DocumentIcon({ size = 20 }: { size?: number }) {
     <svg
       width={size}
       height={size}
+      style={{ flexShrink: 0, maxWidth: '100%' }}
       viewBox="0 0 24 24"
       fill="none"
       stroke="#A15238"
@@ -27,6 +28,7 @@ export function CheckIcon({ size = 18 }: { size?: number }) {
     <svg
       width={size}
       height={size}
+      style={{ flexShrink: 0, maxWidth: '100%' }}
       viewBox="0 0 24 24"
       fill="none"
       stroke="#FFFFFF"

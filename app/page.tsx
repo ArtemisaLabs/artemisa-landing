@@ -8,7 +8,7 @@ import Users from '../src/components/Users/users';
 
 export default function HomePage() {
   return (
-    <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems:'center', justifyItems:'center' }}>
+    <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyItems: 'center' }}>
       <Benefits />
       <Stack
         direction="column"
@@ -17,9 +17,8 @@ export default function HomePage() {
       >
         <Scope />
         <Modules />
-        <Users />
       </Stack>
-
+      <Users />
     </Box>
   );
 }

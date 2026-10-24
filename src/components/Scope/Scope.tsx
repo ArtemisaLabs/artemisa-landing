@@ -128,7 +128,7 @@ export default function Scope() {
     }
 
     return (
-        <Box sx={{ p: { xs: 2, md: 4 }, width: { xs: '100%', lg: '95%' }, mx: 'auto', boxSizing: 'border-box', overflowX: 'clip' }}>
+        <Box sx={{ p: { xs: 2, md: 4 }, width: { xs: '100%', lg: '95%' }, mx: 'auto', boxSizing: 'border-box', overflowX: 'clip' }} className="max">
             <Box
                 sx={{
                     mb: 4,

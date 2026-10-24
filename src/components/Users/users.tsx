@@ -41,8 +41,9 @@ export default function RolesSection() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
-                py: { xs: 4, md: 6 },
+                py: { xs: 4, md: 6 }
             }}
+            className="max"
         >
             {/* Encabezados */}
             <Typography

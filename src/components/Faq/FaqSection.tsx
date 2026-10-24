@@ -45,6 +45,7 @@ export default function FaqSection() {
         gap: { xs: 3, md: 6 },
         overflowX: 'clip',
       }}
+      className="max"
     >
       <Box sx={{ width: { xs: '100%', md: '40%' }, pt: { md: 2 } }}>
         <Typography sx={{ color: 'text.secondary', fontSize: '0.75rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>

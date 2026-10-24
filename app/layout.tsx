@@ -1,5 +1,6 @@
 import ThemeRegistry from '../src/components/ThemeRegistry/ThemeRegistry';
 import NavigationBar from '../src/components/Navbar/navbar';
+import './globals.css';
 
 export const metadata = {
   title: 'Artemisa',

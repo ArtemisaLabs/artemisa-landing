@@ -17,6 +17,7 @@ function Benefits() {
                 mx: 'auto',
                 overflowX: 'clip'
             }}
+            className="max"
         >
             {/* Columna Izquierda: Textos y CTAs */}
             <Stack sx={{ width: { xs: '100%', lg: '50%' }, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>

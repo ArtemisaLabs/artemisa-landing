@@ -36,6 +36,7 @@ export default function PricingSection() {
     <Box
       component="section"
       sx={{ width: '95%', mx: 'auto', boxSizing: 'border-box', p: { xs: 2, md: 4 }, overflowX: 'clip' }}
+      className="max"
     >
       <Typography sx={{ color: 'text.secondary', fontSize: '0.75rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
         Planes y precios

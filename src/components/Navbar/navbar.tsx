@@ -80,6 +80,7 @@ export default function NavigationBar() {
                 py: 2,
                 borderBottom: '1px solid #eaeaea'
             }}
+            className="max"
         >
             {/* LOGOTIPO */}
             {/* LOGOTIPO RESPONSIVO */}

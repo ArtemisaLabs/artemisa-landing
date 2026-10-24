@@ -39,6 +39,7 @@ export default function Footer() {
         justifyContent: 'space-between',
         gap: { xs: 3, lg: 4 },
       }}
+      className="max"
     >
       <Box>
         <Box component="img" src="/artemis-imagotipo.svg" alt="Artemis" sx={{ height: 36, width: 'auto', display: 'block' }} />

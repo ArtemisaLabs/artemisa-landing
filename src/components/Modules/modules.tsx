@@ -58,6 +58,7 @@ export default function Modules() {
                 justifyContent: 'flex-start',
                 py: 4
             }}
+            className="max"
         >
             {/* Encabezados de la sección */}
             <Typography sx={{ color: 'text.secondary', fontSize: '0.75rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>

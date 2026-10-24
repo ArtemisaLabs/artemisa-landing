@@ -13,6 +13,7 @@ import Footer from '../src/components/Footer/Footer';
 export default function HomePage() {
   return (
     <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyItems: 'center' }}>
+      <a id="beneficios"></a>
       <Benefits />
       <Stack
         direction="column"
@@ -20,15 +21,19 @@ export default function HomePage() {
         sx={{ backgroundColor: '#f4f3eb', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         <Scope />
+        <a id="funcionalidades"></a>
         <Modules />
       </Stack>
+      <a id="usuarios"></a>
       <Users />
+      <a id="precios"></a>
       <Stack
         direction="column"
         spacing={2}
         sx={{ backgroundColor: '#f4f3eb', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         <PricingSection />
+        <a id="faq"></a>
         <FaqSection />
         <BannerCTA />
         <Footer />

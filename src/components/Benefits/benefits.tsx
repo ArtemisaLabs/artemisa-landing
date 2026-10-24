@@ -35,9 +35,9 @@ function Benefits() {
                     <Button variant='contained' color='primary' sx={{ width: { xs: '100%', sm: 'auto' }, py: 1.5, px: 3, textTransform: 'none', fontWeight: 600 }}>
                         Solicitar Demo gratuita de Artemis
                     </Button>
-                    <Button variant='outlined' color='primary' sx={{ width: { xs: '100%', sm: 'auto' }, py: 1.5, px: 3, textTransform: 'none', fontWeight: 600 }}>
+                    {/* <Button variant='outlined' color='primary' sx={{ width: { xs: '100%', sm: 'auto' }, py: 1.5, px: 3, textTransform: 'none', fontWeight: 600 }}>
                         Ver Video interactivo (2 min)
-                    </Button>
+                    </Button> */}
                 </Stack>
                 <br/>
                 <SocialProofGroup />

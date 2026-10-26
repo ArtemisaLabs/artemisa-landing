@@ -61,11 +61,11 @@ export default function Footer() {
       </Stack>
 
       <Stack spacing={0.75}>
-        <Link href="mailto:hola@soyartemis.com" underline="hover" sx={{ color: '#3D405B', fontSize: '0.8rem' }}>
-          hola@soyartemis.com
+        <Link href="mailto:soporte@soyartemis.com" underline="hover" sx={{ color: '#3D405B', fontSize: '0.8rem' }}>
+          soporte@soyartemis.com
         </Link>
-        <Link href="tel:+525512345678" underline="hover" sx={{ color: '#3D405B', fontSize: '0.8rem' }}>
-          +52 55 1234 5678
+        <Link href="tel:+528119087543" underline="hover" sx={{ color: '#3D405B', fontSize: '0.8rem' }}>
+          +52 81 1908 7543
         </Link>
       </Stack>
 

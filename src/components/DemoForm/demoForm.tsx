@@ -39,6 +39,17 @@ interface FormData {
   capacidadAlumnos: string;
 }
 
+const INITIAL_FORM: FormData = {
+  nombreEstancia: '',
+  nombreContacto: '',
+  email: '',
+  telefono: '',
+  municipio: '',
+  capacidadAlumnos: '',
+};
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
 const CAPACIDAD_OPTIONS = [
   '1 a 20 niños',
   '21 a 50 niños',
@@ -47,34 +58,68 @@ const CAPACIDAD_OPTIONS = [
 ];
 
 export default function SolicitarDemoModal({ open, onClose }: SolicitarDemoModalProps) {
-  const [formData, setFormData] = useState<FormData>({
-    nombreEstancia: '',
-    nombreContacto: '',
-    email: '',
-    telefono: '',
-    municipio: '',
-    capacidadAlumnos: '',
-  });
+  const [formData, setFormData] = useState<FormData>(INITIAL_FORM);
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const [fieldErrors, setFieldErrors] = useState<Partial<Record<keyof FormData, string>>>({});
+
+  const formatPhone = (raw: string) => {
+    const d = raw.replace(/\D/g, '').slice(0, 10);
+    if (d.length <= 2) return d;
+    if (d.length <= 6) return `${d.slice(0, 2)} ${d.slice(2)}`;
+    return `${d.slice(0, 2)} ${d.slice(2, 6)} ${d.slice(6)}`;
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name } = e.target;
+    const value = name === 'telefono' ? formatPhone(e.target.value) : e.target.value;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFieldErrors((prev) => ({ ...prev, [name]: undefined }));
+  };
+
+  const validate = () => {
+    const errors: Partial<Record<keyof FormData, string>> = {};
+    (Object.keys(formData) as (keyof FormData)[]).forEach((key) => {
+      if (!formData[key].trim()) errors[key] = 'Este campo es obligatorio';
+    });
+    if (!errors.email && !EMAIL_REGEX.test(formData.email.trim())) {
+      errors.email = 'Ingresa un correo electrónico válido';
+    }
+    if (!errors.telefono && formData.telefono.replace(/\D/g, '').length !== 10) {
+      errors.telefono = 'El teléfono debe tener 10 dígitos';
+    }
+    return errors;
+  };
+
+  const fieldProps = (name: keyof FormData) => ({
+    error: Boolean(fieldErrors[name]),
+    helperText: fieldErrors[name],
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setError(null);
 
+    const errors = validate();
+    setFieldErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      setError('Por favor completa correctamente todos los campos obligatorios.');
+      return;
+    }
+
+    setLoading(true);
+
     try {
-      const response = await fetch('/api/solicitar-demo', {
+      const response = await fetch('/api/send-demo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          telefono: formData.telefono.replace(/\D/g, ''),
+        }),
       });
 
       if (!response.ok) {
@@ -82,7 +127,9 @@ export default function SolicitarDemoModal({ open, onClose }: SolicitarDemoModal
       }
 
       setSubmitted(true);
-    } catch (err) {
+      setFieldErrors({});
+      setFormData(INITIAL_FORM);
+    } catch {
       setError('Ocurrió un error al enviar tu solicitud. Inténtalo de nuevo.');
     } finally {
       setLoading(false);
@@ -94,14 +141,8 @@ export default function SolicitarDemoModal({ open, onClose }: SolicitarDemoModal
     setTimeout(() => {
       setSubmitted(false);
       setError(null);
-      setFormData({
-        nombreEstancia: '',
-        nombreContacto: '',
-        email: '',
-        telefono: '',
-        municipio: '',
-        capacidadAlumnos: '',
-      });
+      setFormData(INITIAL_FORM);
+      setFieldErrors({});
     }, 300);
   };
 
@@ -216,6 +257,7 @@ export default function SolicitarDemoModal({ open, onClose }: SolicitarDemoModal
                 fullWidth
                 id="nombreEstancia"
                 name="nombreEstancia"
+                {...fieldProps("nombreEstancia")}
                 label="Nombre de la Estancia / Guardería"
                 placeholder="Ej. Estancia Infantil del Ángel"
                 value={formData.nombreEstancia}
@@ -236,6 +278,7 @@ export default function SolicitarDemoModal({ open, onClose }: SolicitarDemoModal
                 fullWidth
                 id="nombreContacto"
                 name="nombreContacto"
+                {...fieldProps("nombreContacto")}
                 label="Nombre de la Directora o Encargada"
                 placeholder="Ej. María Eugenia Gómez"
                 value={formData.nombreContacto}
@@ -258,6 +301,7 @@ export default function SolicitarDemoModal({ open, onClose }: SolicitarDemoModal
                   type="email"
                   id="email"
                   name="email"
+                {...fieldProps("email")}
                   label="Correo Electrónico"
                   placeholder="directora@estancia.com"
                   value={formData.email}
@@ -279,8 +323,10 @@ export default function SolicitarDemoModal({ open, onClose }: SolicitarDemoModal
                   type="tel"
                   id="telefono"
                   name="telefono"
+                {...fieldProps("telefono")}
                   label="Teléfono / WhatsApp"
                   placeholder="81 1234 5678"
+                  inputMode="tel"
                   value={formData.telefono}
                   onChange={handleChange}
                   slotProps={{
@@ -301,6 +347,7 @@ export default function SolicitarDemoModal({ open, onClose }: SolicitarDemoModal
                   fullWidth
                   id="municipio"
                   name="municipio"
+                {...fieldProps("municipio")}
                   label="Municipio"
                   placeholder="Ej. Monterrey, Guadalupe, San Pedro..."
                   value={formData.municipio}
@@ -322,6 +369,7 @@ export default function SolicitarDemoModal({ open, onClose }: SolicitarDemoModal
                   fullWidth
                   id="capacidadAlumnos"
                   name="capacidadAlumnos"
+                {...fieldProps("capacidadAlumnos")}
                   label="Capacidad de niños"
                   value={formData.capacidadAlumnos}
                   onChange={handleChange}

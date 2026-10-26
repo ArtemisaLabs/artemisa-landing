@@ -9,7 +9,7 @@ function HeartDoodle() {
   );
 }
 
-export default function BannerCTA() {
+export default function BannerCTA({handleOpenModal}: {handleOpenModal: () => void}) {
   return (
     <Box sx={{ width: '95%',  mx: 'auto', boxSizing: 'border-box', px: { xs: 2, md: 4 }, py: 2 }} className="max">
       <Box
@@ -86,8 +86,9 @@ export default function BannerCTA() {
             boxShadow: 'none',
             '&:hover': { backgroundColor: '#F4F1DE', boxShadow: 'none' },
           }}
+          onClick={handleOpenModal}
         >
-          Solicitar Demo Gratuita &rarr;
+          Solicitar Demo &rarr;
         </Button>
       </Box>
     </Box>

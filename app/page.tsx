@@ -1,6 +1,9 @@
 'use client';
 
 import { Container, Typography, Button, Box, Paper, Stack } from '@mui/material';
+import NavigationBar from '../src/components/Navbar/navbar';
+import { useState } from 'react';
+import SolicitarDemoModal from '../src/components/DemoForm/demoForm';
 import Benefits from '../src/components/Benefits/benefits';
 import Scope from '../src/components/Scope/Scope';
 import Modules from '../src/components/Modules/modules';
@@ -11,10 +14,15 @@ import BannerCTA from '../src/components/Footer/BannerCTA';
 import Footer from '../src/components/Footer/Footer';
 
 export default function HomePage() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => setModalOpen(true);
+
   return (
     <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyItems: 'center' }}>
+      <NavigationBar handleOpenModal={handleOpenModal} />
       <a id="beneficios"></a>
-      <Benefits />
+      <Benefits handleOpenModal={handleOpenModal} />
       <Stack
         direction="column"
         spacing={2}
@@ -35,9 +43,13 @@ export default function HomePage() {
         <PricingSection />
         <a id="faq"></a>
         <FaqSection />
-        <BannerCTA />
+        <BannerCTA handleOpenModal={handleOpenModal} />
         <Footer />
       </Stack>
+      <SolicitarDemoModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+      />
     </Box>
   );
 }

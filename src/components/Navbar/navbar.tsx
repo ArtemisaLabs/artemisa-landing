@@ -36,7 +36,7 @@ function HideOnScroll({ children }: Props) {
   );
 }
 
-export default function NavigationBar() {
+export default function NavigationBar({ handleOpenModal }: { handleOpenModal: () => void }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -78,10 +78,10 @@ export default function NavigationBar() {
       </Box>
 
       <Stack spacing={2} sx={{ mb: 2 }}>
-        <Button variant="outlined" color="primary" fullWidth>
+        {/* <Button variant="outlined" color="primary" fullWidth>
           Iniciar Sesion
-        </Button>
-        <Button variant="contained" color="primary" fullWidth>
+        </Button> */}
+        <Button variant="contained" color="primary" fullWidth onClick={handleOpenModal}>
           Solicitar Demo
         </Button>
       </Stack>
@@ -156,7 +156,7 @@ export default function NavigationBar() {
 
             {/* BOTONES DE ESCRITORIO */}
             <Stack direction="row" spacing={2} sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" onClick={handleOpenModal}>
                 Solicitar Demo
               </Button>
             </Stack>

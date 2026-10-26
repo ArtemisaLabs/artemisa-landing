@@ -16,7 +16,6 @@ export default function RootLayout({
     <html lang="es">
       <body>
         <ThemeRegistry>
-          <NavigationBar />  
           {children}
         </ThemeRegistry>
       </body>

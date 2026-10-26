@@ -3,7 +3,11 @@ import MexicoFlag from './MexicoFlag';
 import DashboardPreview from './DashboardPreview';
 import SocialProofGroup from './Avatar';
 
-function Benefits() {
+interface BenefitsProps {
+    handleOpenModal: () => void;
+}
+
+function Benefits({ handleOpenModal }: BenefitsProps) {
     return (
         <Box
             sx={{
@@ -32,7 +36,7 @@ function Benefits() {
                     Automatiza la burocracia de tu estancia en minutos. Genera autom&aacute;ticamente las hojas de asistencia oficiales para el gobierno del estado, monitorea la ocupaci&oacute;n en tiempo real y enamora a los padres con un diario digital completo.
                 </Typography>
                 <Stack sx={{ mt: 4, display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, width: '100%' }}>
-                    <Button variant='contained' color='primary' sx={{ width: { xs: '100%', sm: 'auto' }, py: 1.5, px: 3, textTransform: 'none', fontWeight: 600 }}>
+                    <Button variant='contained' color='primary' onClick={handleOpenModal} sx={{ width: { xs: '100%', sm: 'auto' }, py: 1.5, px: 3, textTransform: 'none', fontWeight: 600 }}>
                         Solicitar Demo gratuita de Artemis
                     </Button>
                     {/* <Button variant='outlined' color='primary' sx={{ width: { xs: '100%', sm: 'auto' }, py: 1.5, px: 3, textTransform: 'none', fontWeight: 600 }}>

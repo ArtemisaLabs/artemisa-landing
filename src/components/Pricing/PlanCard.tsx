@@ -87,7 +87,7 @@ export default function PlanCard({ name, tagline, price, features, buttonLabel, 
         ))}
       </Stack>
 
-      <Button
+      {/* <Button
         fullWidth
         variant={featured ? 'contained' : 'outlined'}
         sx={{
@@ -103,7 +103,7 @@ export default function PlanCard({ name, tagline, price, features, buttonLabel, 
         }}
       >
         {buttonLabel}
-      </Button>
+      </Button> */}
     </Box>
   );
 }

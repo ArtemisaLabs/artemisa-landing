@@ -40,7 +40,7 @@ function Benefits() {
                     </Button> */}
                 </Stack>
                 <br/>
-                <SocialProofGroup />
+                {/* <SocialProofGroup /> */}
             </Stack>
 
             {/* Columna Derecha: Contenedor Relativo que envuelve AMBAS capas */}

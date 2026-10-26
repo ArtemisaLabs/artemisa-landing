@@ -14,7 +14,7 @@ export default function RolesSection() {
             ],
         },
         {
-            title: 'Maestras / Misses',
+            title: 'Maestras',
             isHighlighted: false,
             features: [
                 'Pase de lista rápido',

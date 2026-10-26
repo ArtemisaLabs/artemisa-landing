@@ -32,17 +32,18 @@ export default function Modules() {
         },
         {
             title: 'Paquetes y Horas Extra',
-            description: 'Facturación automática por turnos (4h, 6h, completo) con regla de redondeo a hora completa.',
+            description: 'Facturación automática por turnos (4h, 6h, completo).',
             icon: <PackagesIcon size={44} />,
         },
         {
             title: 'Diario Digital y Menús Nutricionales',
-            description: 'Bitácora diaria con fotos, planeaciones temáticas mensuales y menús con sustitución de platillos.',
+            // description: 'Acompaña a las maestras en la planificación, realización, evaluación de experiencias de aprendizaje para niñas y niños.',
+            description: 'Bitácora diaria con fotos, planeaciones pedagógicas mensuales y menús especiales para cada alumno.',
             icon: <DigitalJournalIcon size={44} />,
         },
         {
             title: 'Cumplimiento y Firma Digital',
-            description: 'Ratios legalmente seguros (NOM-009-SSA3), carpetas de Protección Civil y firma de documentos.',
+            description: 'Cumplimiento normativo y firma digital de documentos importantes.',
             icon: <ComplianceIcon size={44} />,
         },
     ];

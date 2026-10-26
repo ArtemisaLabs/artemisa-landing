@@ -6,7 +6,7 @@ const faqs = [
   {
     question: '¿Cumple con los requisitos del Gobierno de Nuevo León?',
     answer:
-      'Sí, completamente. Artemis genera de forma automatizada las Hojas Oficiales de Asistencia con el formato exacto exigido por las autoridades del Gobierno de Nuevo León y los lineamientos de Protección Civil (NOM-009-SSA3).',
+      'Sí, completamente. Artemis genera de forma automatizada las Hojas Oficiales de Asistencia con el formato exacto exigido por las autoridades del Gobierno de Nuevo León.',
   },
   {
     question: '¿Qué tan segura es la información de mis alumnos?',
@@ -19,14 +19,14 @@ const faqs = [
       'La configuración inicial toma menos de 15 minutos. Nuestro equipo te ayuda a importar las listas de alumnos y personalizar la plataforma para que empieces a operarla el mismo día.',
   },
   {
-    question: '¿Las misses que no son muy tecnológicas pueden usarlo fácilmente?',
+    question: '¿El personal de atención y cuidado infantil puede usarlo fácilmente?',
     answer:
       'Sí. Diseñamos la interfaz para que sea intuitiva y muy visual. Cualquier persona que sepa usar WhatsApp o tabletas puede pasar lista y enviar reportes en solo 2 clics.',
   },
   {
     question: '¿Tiene contactos de emergencia y alertas?',
     answer:
-      'Sí. Cada ficha de alumno cuenta con botones de marcación rápida para tutores y servicios de emergencia, así como registro de pólizas de seguro e historial de alergias.',
+      'Sí. Cada ficha de alumno cuenta con botones de marcación rápida para tutores y servicios de emergencia.',
   },
 ];
 
